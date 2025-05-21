@@ -1,0 +1,96 @@
+﻿<Window x:Class="BackgroundTerminal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False"
+        Title="Test"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Loaded="MainWindow_Loaded"
+        Width="1920"
+        Height="1040"
+        Left="0"
+        Top="0">
+    <Grid Background="Transparent">
+        <!-- Grid 3x2 -->
+        <Grid Name="MainGrid" Margin="10 10 10 45" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- TextBox'ы -->
+            <TextBlock Name="Output0" Grid.Row="0" Grid.Column="0" Background="Transparent" Foreground="#EEEEEE" FontFamily="Consolas" FontSize="12" />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Name="Output1_1" Grid.Row="0" Grid.Column="1" Background="Transparent" Foreground="#EEEEEE" FontFamily="PIXY" FontSize="120" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="12:45" />
+                <TextBlock Name="Output1_2" Grid.Row="1" Grid.Column="1" Background="Transparent" Foreground="#EEEEEE" FontFamily="PIXY" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Text="6 мая 2077" />
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="Output2_0" Grid.Row="0" Grid.Column="0" Background="Transparent" Foreground="#EEEEEE" FontFamily="Consolas" FontSize="20" TextAlignment="Right" TextWrapping="Wrap" Text="CPU:
+                           MEMORY:
+                           🌐↑   
+                           🌐↓"/>
+                <TextBlock Name="Output2_1" Grid.Row="0" Grid.Column="1" Background="Transparent" Foreground="#EEEEEE" FontFamily="Consolas" FontSize="20" TextAlignment="Center" />
+                <TextBlock Name="Output2_2" Grid.Row="0" Grid.Column="2" Background="Transparent" Foreground="#EEEEEE" FontFamily="Consolas" FontSize="20" TextAlignment="Center" />
+            </Grid>
+            <TextBlock Name="Output3" TextWrapping="Wrap" Grid.Row="1" Grid.Column="0" Background="Transparent" Foreground="#EEEEEE" FontFamily="Consolas" FontSize="12" />
+            <RichTextBox Name="Output4" 
+                         Grid.Row="1" Grid.Column="1" 
+                         Background="#01000000" 
+                         Foreground="#EEEEEE" 
+                         FontFamily="Consolas" 
+                         FontSize="12" 
+                         VerticalAlignment="Bottom" 
+                         BorderThickness="0" 
+                         IsReadOnly="True"/>
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Height="200" Width="200" VerticalAlignment="Top" ></Image>
+                    <TextBlock Name="OutputW0" VerticalAlignment="Center" Margin="0 0 0 40" Height="30" TextAlignment="Center" FontFamily="PIXY" Foreground="White" FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">Неясно нихуя</TextBlock>
+                    <TextBlock Name="OutputW1" Grid.Row="0" Grid.Column="1" Background="Transparent" Foreground="#EEEEEE" FontFamily="PIXY" FontSize="20" VerticalAlignment="top" TextAlignment="Center"/>
+                    <TextBlock Name="OutputW2" Grid.Row="1" Grid.Column="2" Background="Transparent" Foreground="#EEEEEE" FontFamily="PIXY" FontSize="20" VerticalAlignment="top" TextAlignment="Center"/>
+
+
+                </Grid>
+                    <!--<RichTextBox x:Name="RTBshiki" Grid.Row="1" IsReadOnly="True" Foreground="White" Background="#01000000" BorderBrush="Transparent"/>-->
+                    <RichTextBox x:Name="RTBdtf" Grid.Row="1" 
+                                 Grid.Column="1" IsReadOnly="True" 
+                                 Foreground="White" Background="#01000000" 
+                                 BorderBrush="Transparent" FontFamily="PIXY"/>
+            </Grid>
+        </Grid>
+
+        <!-- Поле ввода -->
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="10,0,10,10">
+            <TextBox Name="InputBox" KeyDown="Input_KeyDown" Background="#111111" Foreground="#EEEEEE" FontFamily="Consolas" FontSize="12" BorderThickness="0" Padding="4" />
+        </DockPanel>
+    </Grid>
+</Window>
