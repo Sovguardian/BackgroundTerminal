@@ -84,7 +84,7 @@ MIT License. See [LICENSE](https://github.com/Sovguardian/BackgroundTerminal/blo
 
 ## 📜 Лицензия
 
-MIT License. Подробнее в файле [LICENSE](https://github.com/Sovguardian/BackgroundTerminal/blob/main/LICENSE).
+Custom License. Подробнее в файле [LICENSE](https://github.com/Sovguardian/BackgroundTerminal/blob/main/LICENSE).
 
 ---
 
