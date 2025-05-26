@@ -97,14 +97,22 @@ namespace BackgroundTerminal
 
             foreach (char c in text)
             {
-                var run = new Run(c.ToString()) { Foreground = colors[colorIndex] };
-                paragraph.Inlines.Add(run);
-                colorIndex = (colorIndex + 1) % colors.Length;
+                if (c == '\n')
+                {
+                    //paragraph.Inlines.Add(new LineBreak());
+                }
+                else
+                {
+                    var run = new Run(c.ToString()) { Foreground = colors[colorIndex] };
+                    paragraph.Inlines.Add(run);
+                }
+                    colorIndex = (colorIndex + 1) % colors.Length;
             }
 
             _tb.Document.Blocks.Add(paragraph);
             _tb.ScrollToEnd();
         }
+
 
         public void setColor(string color)
         {
